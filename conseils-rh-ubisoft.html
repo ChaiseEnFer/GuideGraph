@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseils RH Ubisoft - Guide Graph</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .theme-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-card.cv {
+            border-left-color: #e74c3c;
+        }
+
+        .theme-card.entretien {
+            border-left-color: #3498db;
+        }
+
+        .theme-card.portfolio {
+            border-left-color: #f39c12;
+        }
+
+        .theme-card.competences {
+            border-left-color: #27ae60;
+        }
+
+        .theme-card.networking {
+            border-left-color: #9b59b6;
+        }
+
+        .theme-card.culture {
+            border-left-color: #1abc9c;
+        }
+
+        .theme-card h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-card h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: currentColor;
+            border-radius: 2px;
+        }
+
+        .advice-list {
+            list-style: none;
+        }
+
+        .advice-list li {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .advice-list li:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .advice-list li::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .tips-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .tips-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tip-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            border-left: 4px solid;
+            border-image: linear-gradient(45deg, #667eea, #764ba2) 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Conseils RH Ubisoft</h1>
+            <p>Guide complet pour réussir votre candidature chez Ubisoft</p>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="entreprises-classiques.html">Entreprises Classiques</a>
+                <a href="entreprises-jv.html">Studios JV</a>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <strong>Basé sur la conférence ENJMIN - Conseils RH Ubisoft</strong>
+        </div>
+
+        <div class="themes-grid">
+            <div class="theme-card cv">
+                <h2>CV & Candidature</h2>
+                <ul class="advice-list">
+                    <li><strong>Mise en page claire :</strong> Utilisez une présentation aérée avec des sections bien définies</li>
+                    <li><strong>Expérience pertinente :</strong> Mettez en avant vos projets liés au jeu vidéo ou à la tech</li>
+                    <li><strong>Compétences techniques :</strong> Listez les outils et technologies que vous maîtrisez</li>
+                    <li><strong>Portfolio intégré :</strong> Incluez des liens vers vos réalisations les plus marquantes</li>
+                    <li><strong>Adaptation au poste :</strong> Personnalisez votre CV selon l'offre d'emploi visée</li>
+                    <li><strong>Mots-clés :</strong> Utilisez le vocabulaire technique du secteur du jeu vidéo</li>
+                </ul>
+            </div>
+
+            <div class="theme-card entretien">
+                <h2>Entretien d'embauche</h2>
+                <ul class="advice-list">
+                    <li><strong>Préparation culturelle :</strong> Connaissez l'histoire et les valeurs d'Ubisoft</li>
+                    <li><strong>Questions techniques :</strong> Préparez-vous aux questions spécifiques à votre domaine</li>
+                    <li><strong>Exemples concrets :</strong> Préparez des anecdotes de vos projets précédents</li>
+                    <li><strong>Questions à poser :</strong> Montrez votre intérêt en posant des questions pertinentes</li>
+                    <li><strong>Passion du jeu :</strong> Exprimez votre passion pour les jeux vidéo et l'industrie</li>
+                    <li><strong>Collaboration :</strong> Mettez en avant votre capacité à travailler en équipe</li>
+                </ul>
+            </div>
+
+            <div class="theme-card portfolio">
+                <h2>Portfolio & Projets</h2>
+                <ul class="advice-list">
+                    <li><strong>Diversité des projets :</strong> Montrez votre polyvalence à travers différents types de projets</li>
+                    <li><strong>Processus créatif :</strong> Documentez votre démarche de conception</li>
+                    <li><strong>Résultats mesurables :</strong> Quantifiez l'impact de vos réalisations</li>
+                    <li><strong>Technologies modernes :</strong> Utilisez les outils et frameworks actuels</li>
+                    <li><strong>Présentation soignée :</strong> Un portfolio bien présenté fait la différence</li>
+                    <li><strong>Projets personnels :</strong> Incluez des projets qui montrent votre passion</li>
+                </ul>
+            </div>
+
+            <div class="theme-card competences">
+                <h2>Compétences Techniques</h2>
+                <ul class="advice-list">
+                    <li><strong>Maîtrise des outils :</strong> Unity, Unreal Engine, Photoshop, Illustrator</li>
+                    <li><strong>Langages de programmation :</strong> C++, C#, Python selon le poste</li>
+                    <li><strong>Gestion de projet :</strong> Méthodologies Agile, Scrum</li>
+                    <li><strong>Versioning :</strong> Git, Perforce pour la collaboration</li>
+                    <li><strong>Optimisation :</strong> Performance, mémoire, rendu</li>
+                    <li><strong>Veille technologique :</strong> Restez à jour avec les dernières tendances</li>
+                </ul>
+            </div>
+
+            <div class="theme-card networking">
+                <h2>Networking & Visibilité</h2>
+                <ul class="advice-list">
+                    <li><strong>LinkedIn optimisé :</strong> Profil complet avec mots-clés pertinents</li>
+                    <li><strong>Participation aux événements :</strong> Game Dev Meetups, conférences</li>
+                    <li><strong>Communautés en ligne :</strong> Forums, Discord, Reddit spécialisés</li>
+                    <li><strong>Contenu créatif :</strong> Blog, YouTube, Twitch pour partager vos connaissances</li>
+                    <li><strong>Collaborations :</strong> Participez à des game jams et projets communautaires</li>
+                    <li><strong>Mentorat :</strong> Aidez d'autres développeurs, créez des liens</li>
+                </ul>
+            </div>
+
+            <div class="theme-card culture">
+                <h2>Culture d'Entreprise</h2>
+                <ul class="advice-list">
+                    <li><strong>Valeurs Ubisoft :</strong> Diversité, inclusion, innovation, passion</li>
+                    <li><strong>Collaboration internationale :</strong> Ouverture d'esprit et adaptabilité</li>
+                    <li><strong>Créativité :</strong> Capacité à proposer des idées originales</li>
+                    <li><strong>Apprentissage continu :</strong> Volonté d'évoluer et de se former</li>
+                    <li><strong>Qualité :</strong> Exigence et attention aux détails</li>
+                    <li><strong>Passion du jeu :</strong> Compréhension des enjeux du secteur</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>Conseils Pratiques</h2>
+            <div class="tips-grid">
+                <div class="tip-item">Ciblez le bon poste</div>
+                <div class="tip-item">Email de candidature percutant</div>
+                <div class="tip-item">Recherche approfondie sur l'entreprise</div>
+                <div class="tip-item">Respect des délais</div>
+                <div class="tip-item">Présence digitale professionnelle</div>
+                <div class="tip-item">Connaissance des jeux Ubisoft</div>
+                <div class="tip-item">Communication claire</div>
+                <div class="tip-item">Proactivité et initiative</div>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <strong>Objectif :</strong> Démontrer votre passion, vos compétences et votre adéquation avec la culture Ubisoft pour décrocher l'emploi de vos rêves dans l'industrie du jeu vidéo !
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; margin-top: 30px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); text-align: center; border-top: 4px solid; border-image: linear-gradient(45deg, #667eea, #764ba2) 1;">
+            <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                <strong style="color: #2c3e50; font-size: 16px;">Crédits</strong><br>
+                Basé sur les notes de <strong style="color: #667eea;">Pauline Pacé</strong><br>
+                6ᵉ promotion de LIJV du CNAM ENJMIN à Angoulême
+            </p>
+        </div>
+    </div>
+</body>
+</html>

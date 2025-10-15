@@ -6,58 +6,179 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Guide Alternance Graphisme Complet</title>
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg,#e8f7ff,#fbfefe);
-    color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     padding: 20px;
 }
 .container {
-    max-width: 1100px;
-    margin: auto;
-    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(2,18,35,0.06);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
-h1 { color: #0066cc; text-align: center; margin-bottom: 20px; }
-h2 { color: #0ea37f; border-left: 5px solid #d9f3ea; padding-left: 12px; margin-top: 25px; }
-h3 { color: #05445E; margin-top: 15px; }
+h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid;
+    border-image: linear-gradient(45deg, #667eea, #764ba2) 1;
+}
+h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
 .step {
-    background: #f6fbff;
-    border: 1px solid #e6f3ff;
-    padding: 18px;
-    border-radius: 12px;
-    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid;
+    border-image: linear-gradient(45deg, #667eea, #764ba2) 1;
+    transition: transform 0.3s ease;
 }
-ul { margin-left: 18px; margin-top: 8px; }
-li { margin-bottom: 8px; line-height: 1.45; }
+.step:hover {
+    transform: translateY(-3px);
+}
+ul {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
 .note {
-    background: #fff7e6;
-    border-left: 4px solid #ffd166;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 12px;
+    background: linear-gradient(135deg, #ffd166, #ffb84d);
     color: #5a4a1a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
 }
-.annuaire, .studios {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 18px;
-    margin-top: 12px;
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
 }
-.city {
-    background: linear-gradient(180deg,#ffffff,#f7feff);
-    border:1px solid #eef8f9;
-    padding:14px;
-    border-radius:10px;
-    min-height:140px;
+.nav-buttons a {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-.city h3 { margin-bottom: 8px; font-size: 16px; }
-footer { margin-top: 22px; font-size: 13px; color: #6b7280; text-align: center; }
-a {color: #0066cc; text-decoration: none;}
-a:hover {text-decoration: underline;}
-@media (max-width:900px){.annuaire,.studios{grid-template-columns:1fr}}
+.nav-buttons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+.resources-list {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.resources-list ul {
+    list-style: none;
+    padding: 0;
+}
+.resources-list li {
+    padding: 15px;
+    margin: 10px 0;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #2c3e50;
+    transition: all 0.3s ease;
+}
+.resources-list li:hover {
+    background: #e8eaf6;
+    transform: translateX(5px);
+}
+.example-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #34495e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover {
+    color: #1a252f;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
 </style>
 </head>
 <body>
@@ -100,7 +221,7 @@ a:hover {text-decoration: underline;}
 <li>Valeur ajoutée : 3 lignes maximum.</li>
 <li>Call to Action : demander un échange.</li>
 </ul>
-<div style="background-color:#e9f7ff;border-left:4px solid #007bff;padding:12px;border-radius:8px;margin-top:10px;font-family:monospace;white-space:pre-wrap;">Exemple d'e-mail professionnel :
+<div class="example-box">Exemple d'e-mail professionnel :
 
 Objet : Candidature Alternance Graphisme – [Spécialité]
 
@@ -131,7 +252,7 @@ Bien cordialement,
 <li>Statut L1 : honnêteté et motivation.</li>
 <li>Questions pertinentes à poser.</li>
 </ul>
-<div style="background-color:#e7fbee;border-left:4px solid #28a745;padding:12px;border-radius:8px;margin-top:10px;">Le minimum à connaître avant un entretien :
+<div class="example-box">Le minimum à connaître avant un entretien :
 - Le secteur d’activité de l’entreprise (agence, marque, e-commerce, etc.)
 - Ses principaux clients ou projets récents (site ou LinkedIn)
 - Son style graphique ou sa ligne éditoriale (visible dans ses visuels)
@@ -149,15 +270,19 @@ Bien cordialement,
 <h2>5. Annuaire d'entreprises</h2>
 <div class="step">
 <p>Consultez les annuaires des entreprises et studios classés par ville :</p>
-<p style="text-align:center;margin-top:20px;display:flex;gap:15px;justify-content:center;">
-<a href="entreprises-classiques.html" style="display:inline-block;background:#0066cc;color:white;padding:15px 30px;border-radius:8px;font-weight:bold;text-decoration:none;font-size:16px;">🎨 Agences & Entreprises</a>
-<a href="entreprises-jv.html" style="display:inline-block;background:#10b981;color:white;padding:15px 30px;border-radius:8px;font-weight:bold;text-decoration:none;font-size:16px;">🎮 Studios Jeux Vidéo</a>
-</p>
-<ul style="margin-top:20px;">
-<li>🎨 <strong>Agences Classiques</strong> : 170+ agences de graphisme, communication et design</li>
-<li>🎮 <strong>Studios Jeux Vidéo</strong> : 50+ studios de développement de jeux</li>
-<li>📍 <strong>16 villes</strong> : Paris, Lyon, Toulouse, Bordeaux, Marseille, Montpellier, Lille, Nantes, Strasbourg, Nice, Rennes, Grenoble, Angers, Tours, Reims, Dijon</li>
+<div class="nav-buttons">
+<a href="entreprises-classiques.html">Agences & Entreprises</a>
+<a href="entreprises-jv.html">Studios Jeux Vidéo</a>
+<a href="conseils-rh-ubisoft.html">Conseils RH Ubisoft</a>
+</div>
+<div class="resources-list">
+<ul>
+<li><strong>Agences Classiques</strong> : 170+ agences de graphisme, communication et design</li>
+<li><strong>Studios Jeux Vidéo</strong> : 50+ studios de développement de jeux</li>
+<li><strong>Conseils RH Ubisoft</strong></li>
+<li><strong>16 villes</strong> : Paris, Lyon, Toulouse, Bordeaux, Marseille, Montpellier, Lille, Nantes, Strasbourg, Nice, Rennes, Grenoble, Angers, Tours, Reims, Dijon</li>
 </ul>
+</div>
 </div>
 <footer>
 Vérifiez toujours les pages “Carrières” et les sites officiels avant d’envoyer une candidature. Adaptez vos CV et lettres au secteur ciblé.
